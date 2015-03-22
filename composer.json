@@ -1,5 +1,8 @@
 {
     "require": {
-        "slim/slim": "~2.6"
+        "slim/slim": "~2.6",
+        "slim/logger": "0.1.*",
+        "entomb/slim-json-api": "~1.1",
+        "christianklisch/slim-minify": "0.4.*"
     }
 }

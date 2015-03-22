@@ -4,8 +4,135 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7c472e508d135ce0de8538e1a414d4e0",
+    "hash": "25d5505edbbd23ad95278410c668341e",
     "packages": [
+        {
+            "name": "christianklisch/slim-minify",
+            "version": "0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/christianklisch/slim-minify.git",
+                "reference": "785e7559481034425c49ed780dba8ceb36d78659"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/christianklisch/slim-minify/zipball/785e7559481034425c49ed780dba8ceb36d78659",
+                "reference": "785e7559481034425c49ed780dba8ceb36d78659",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0",
+                "slim/slim": ">=2.5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Slim\\Middleware\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Klisch",
+                    "homepage": "http://www.christian-klisch.de/"
+                }
+            ],
+            "description": "Minify html output in slim framework",
+            "homepage": "https://github.com/christianklisch/slim-minify",
+            "keywords": [
+                "html",
+                "minify",
+                "php"
+            ],
+            "time": "2015-03-21 09:11:54"
+        },
+        {
+            "name": "entomb/slim-json-api",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/entomb/slim-json-api.git",
+                "reference": "1d4531499a42af085157796e41afdb0415eceff6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/entomb/slim-json-api/zipball/1d4531499a42af085157796e41afdb0415eceff6",
+                "reference": "1d4531499a42af085157796e41afdb0415eceff6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "jsonAPI/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL 3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Tavares",
+                    "email": "the.entomb@gmail.com",
+                    "homepage": "https://github.com/entomb",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Slim extension to implement fast JSON API's",
+            "homepage": "https://github.com/entomb/slim-json-api",
+            "keywords": [
+                "api",
+                "json",
+                "middleware",
+                "slim",
+                "view"
+            ],
+            "time": "2014-08-25 12:39:35"
+        },
+        {
+            "name": "slim/logger",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeguy/Slim-Logger.git",
+                "reference": "ad3a2e62236f5d37056de9a4586659edc8164937"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeguy/Slim-Logger/zipball/ad3a2e62236f5d37056de9a4586659edc8164937",
+                "reference": "ad3a2e62236f5d37056de9a4586659edc8164937",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "slim/slim": ">=2.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Slim\\Logger\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Lockhart",
+                    "email": "info@joshlockhart.com",
+                    "homepage": "http://www.joshlockhart.com/"
+                }
+            ],
+            "description": "Slim Framework logger",
+            "time": "2014-07-16 20:11:26"
+        },
         {
             "name": "slim/slim",
             "version": "2.6.2",
