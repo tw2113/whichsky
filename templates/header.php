@@ -1,9 +1,3 @@
-<?php
-
-namespace tw2113\WhiskyPalatte;
-use \Slim\Slim as Slim;
-
-?>
 <!doctype html>
 <html lang="en">
 <meta charset="utf-8">
