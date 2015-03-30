@@ -15,11 +15,7 @@ $app = new Slim(
 	)
 );
 
-$app->get('/', function () use ($app) {
-    $app->render('home.php', array(
-		'title' => 'Hello Slim.',
-		'body'  => 'Horrible latin'
-	));
-});
+require 'routes/whisky.php';
+require 'routes/home.php';
 
 $app->run();
