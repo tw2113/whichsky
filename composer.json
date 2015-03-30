@@ -4,6 +4,6 @@
         "slim/logger": "0.1.*",
         "entomb/slim-json-api": "~1.1",
         "christianklisch/slim-minify": "0.4.*",
-        "gabordemooij/redbean": "~3.5"
+        "aura/sqlquery": "~2.4"
     }
 }
