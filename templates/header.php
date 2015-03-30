@@ -8,4 +8,3 @@
 <script src="../public/assets/js/script.js"></script>
 <link rel="stylesheet" href="../public/assets/css/style.css">
 <body>
-<?php echo $body; ?>
