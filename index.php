@@ -3,6 +3,7 @@
 namespace tw2113\WhiskyPalatte;
 use \Slim\Slim as Slim;
 use \Slim\Logger as Logger;
+use Aura\SqlQuery\QueryFactory;
 
 require 'vendor/autoload.php';
 
