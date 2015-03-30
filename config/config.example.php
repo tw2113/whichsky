@@ -1,7 +1,6 @@
 <?php
 
 namespace tw2113\WhiskyPalatte;
-use \Slim\Slim as Slim;
 
 return array(
 // MySQL
