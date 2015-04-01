@@ -1,9 +1,10 @@
 {
     "require": {
-        "slim/slim": "~2.6",
-        "slim/logger": "0.1.*",
+        "slim/slim": "dev-develop",
         "entomb/slim-json-api": "~1.1",
-        "christianklisch/slim-minify": "0.4.*",
         "aura/sqlquery": "~2.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.5.0"
     }
 }
