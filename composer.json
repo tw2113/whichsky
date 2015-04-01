@@ -5,6 +5,7 @@
         "aura/sqlquery": "~2.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.5.0"
+        "phpunit/phpunit": "4.5.0",
+        "fzaninotto/faker": "1.4.0"
     }
 }
