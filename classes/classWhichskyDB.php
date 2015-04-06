@@ -23,6 +23,15 @@ class Database {
     public $tableNames = array();
 
     /**
+     * Columns to be added to database.
+     *
+     * @since 1.0.0
+     *
+     * @var array
+     */
+    private $columns = array();
+
+    /**
      * Path to our config file.
      *
      * @since 1.0.0
