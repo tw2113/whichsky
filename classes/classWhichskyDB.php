@@ -129,6 +129,57 @@ class Database {
     }
 
     /**
+     * Sets our default database columns.
+     *
+     * @since 1.0.0
+     *
+     * @return mixed
+     */
+    private function setColumns(){
+        $this->columns['whiskies'] = [
+            'whisky_id',
+            'name',
+            'whisky_abv',
+            'distiller_name',
+            'distiller_id',
+            'packaging_description',
+            'years_matured',
+            'style',
+            'volume',
+            'price',
+            'aroma',
+            'palate',
+            'finish',
+            'date_purchased',
+            'date_opened',
+            'picture',
+            'on_wishlist'
+        ];
+
+        $this->columns['distilleries'] = [
+            'name',
+            'distiller ID',
+            'location',
+            'year established',
+            'website url',
+            'logo'
+        ];
+    }
+
+    /**
+     * Returns columns for a single specified table.
+     *
+     * @since 1.0.0
+     *
+     * @param $table Table name whose columns are requested
+     *
+     * @return array Array of columns for the table.
+     */
+    private function getSingleTableColumns( $table ) {
+        return $this->columns[ $table ];
+    }
+
+    /**
      * Fetches our database connection object.
      *
      * @since 1.0.0
