@@ -1,6 +1,6 @@
 <?php
 
-namespace tw2113\WhiskyPalatte;
+namespace tw2113\Whichsky;
 
 use \Slim as Slim;
 use Aura\SqlQuery\QueryFactory;
