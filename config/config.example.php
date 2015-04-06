@@ -1,6 +1,6 @@
 <?php
 
-namespace tw2113\WhiskyPalatte;
+namespace tw2113\Whichsky;
 
 return array(
 // MySQL
