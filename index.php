@@ -1,17 +1,16 @@
 <?php
 
 namespace tw2113\WhiskyPalatte;
-use \Slim\Slim as Slim;
-use \Slim\Logger as Logger;
+
+use \Slim as Slim;
 use Aura\SqlQuery\QueryFactory;
 
 require 'vendor/autoload.php';
 
-$app = new Slim(
+$app = new \Slim\App(
 	array(
 		'debug' => true,
-		'log.enabled' => true,
-		'log.writer' => new Logger\DateTimeFileWriter()
+		'log.enabled' => true
 	)
 );
 
