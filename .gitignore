@@ -3,3 +3,4 @@ vendor
 .sass-cache
 node_modules
 config/config.php
+*.sqlite3
