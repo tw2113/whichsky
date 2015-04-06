@@ -54,7 +54,7 @@ class Database {
         $this->configPath = './config/config.php';
     }
 
-    public function init() {
+    public function start() {
         if ( ! $this->databaseExists() ) {
             $this->createDatabaseFile();
             $this->createTables();
