@@ -1,14 +1,3 @@
-<?php
+<?php $this->layout('page', ['title' => 'User Profile']) ?>
 
-namespace tw2113\Whichsky;
-use \Slim\Slim as Slim;
-
-$app = Slim::getInstance();
-
-$app->get('header.php');
-
-printf( '<h1>%s</h1>',
-	'Welcome to Whicksky! Your own personal Whisky tasting and wishlist application.'
-);
-
-$app->get('footer.php');
+<h1><?php echo "Welcome to Whichsky, {$this->e($name)}! Your own personal Whisky tasting and wishlist application."; ?></h1>
