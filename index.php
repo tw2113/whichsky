@@ -14,7 +14,7 @@ $app = new \Slim\App(
 	)
 );
 
-require 'routes/whisky.php';
 require 'routes/home.php';
+require 'routes/whisky.php';
 
 $app->run();
