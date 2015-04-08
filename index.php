@@ -15,6 +15,8 @@ $app = new \Slim\App(
 );
 
 require 'routes/home.php';
+require 'routes/whiskies.php';
 require 'routes/whisky.php';
+require 'routes/wishlist.php';
 
 $app->run();
