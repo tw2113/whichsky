@@ -4,20 +4,20 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		lint: {
 			files: [
-				'public/assets/js/src/**/*.js'
+				'templates/assets/js/src/**/*.js'
 			]
 		},
 		concat: {
 			dist: {
 				src: '<%= lint.files %>',
-				dest: 'public/assets/js/<%= pkg.name %>.js',
+				dest: 'templates/assets/js/<%= pkg.name %>.js',
 				separator: ';'
 			}
 		},
 		min: {
 			dist: {
-				src: ['public/assets/js/<%= pkg.name %>.js'],
-				dest: 'public/assets/js/<%= pkg.name %>.min.js'
+				src: ['templates/assets/js/<%= pkg.name %>.js'],
+				dest: 'templates/assets/js/<%= pkg.name %>.min.js'
 			}
 		},
 		watch: {
@@ -26,14 +26,14 @@ module.exports = function(grunt) {
 				tasks: ['concat', 'uglify']
 			},
 			sass: {
-				files: ['public/assets/scss/**/*.{scss,sass}'],
+				files: ['templates/assets/scss/**/*.{scss,sass}'],
 				tasks: ['sass:dist']
 			}
 		},
 		sass: {
 			dist: {
 				files: {
-					'public/assets/css/style.css': 'public/assets/scss/style.scss'
+					'templates/assets/css/style.css': 'templates/assets/scss/style.scss'
 				}
 			}
 		},
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'public/assets/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+					'templates/assets/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
 				}
 			}
 		}
