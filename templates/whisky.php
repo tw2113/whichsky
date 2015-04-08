@@ -1,20 +1,3 @@
-<?php
+<?php $this->layout('page', ['title' => 'Whichsky Whisky']) ?>
 
-namespace tw2113\Whichsky;
-use \Slim\Slim as Slim;
-
-$app = Slim::getInstance();
-
-$app->render('header.php');
-
-echo $body['id'] . $body['name'] . $body['distillery'];
-
-echo '<hr/>';
-
-printf(
-	'<a href="%s">%s</a>',
-	'/whisky/' . $body['id'],
-	$body['name']
-);
-
-$app->render('footer.php');
+<h1>This page will list info about an individual whisky.</h1>
