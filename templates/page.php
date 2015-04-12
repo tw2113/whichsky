@@ -10,13 +10,14 @@
 
 <link rel="stylesheet" href="/templates/assets/css/style.css">
 <body>
-<div id="wrap">
-<header id="branding" role="banner">
+<div id="wrap" class="pure-g">
+<header id="branding" role="banner" class="pure-u-1-1">
     <nav id="access" role="navigation">
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/whiskies/">Whiskies</a></li>
             <li><a href="/wishlist/">Wishlist</a></li>
+            <li><a href="/manage/">Manage</a></li>
             <li><a href="/options/">Options</a></li>
         </ul>
     </nav>
@@ -24,8 +25,8 @@
 
 <?php echo $this->section('content'); ?>
 
-<footer id="colophon" role="contentinfo">
-    <small>&copy;<?php echo date('Y'); ?> Whichsky</small>
+<footer id="colophon" role="contentinfo" class="pure-u-1-1">
+    <p><small>&copy;<?php echo date('Y'); ?> Whichsky</small> - <a href="/">Home</a> | <a href="/whiskies/">Whiskies</a> | <a href="/wishlist/">Wishlist</a> | <a href="/manage/">Manage</a> | <a href="/options/">Options</a>.</p>
 </footer>
 </div>
 <script src="/templates/assets/js/whichsky.min.js"></script>
