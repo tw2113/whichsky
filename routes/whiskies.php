@@ -11,6 +11,11 @@ $app->get('/whiskies/', function() use ($app) {
 
     $templates = new Plates('./templates');
 
+    $data['whiskies'] = [
+        'one'   => 'two',
+        'three' => 'four',
+        'five'  => 'six'
+    ];
     // Render a template
-    echo $templates->render('whiskies');
+    echo $templates->render('whiskies',$data);
 });
