@@ -7,7 +7,7 @@ use Aura\SqlQuery\QueryFactory;
 
 require 'vendor/autoload.php';
 
-$app = new \Slim\App(
+$app = new Slim\App(
 	array(
 		'debug' => true,
 		'log.enabled' => true
