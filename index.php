@@ -18,5 +18,6 @@ require 'routes/home.php';
 require 'routes/whiskies.php';
 require 'routes/whisky.php';
 require 'routes/wishlist.php';
+require 'routes/options.php';
 
 $app->run();
