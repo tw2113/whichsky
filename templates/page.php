@@ -25,7 +25,7 @@
 <?php echo $this->section('content'); ?>
 
 <footer id="colophon" role="contentinfo">
-    <small>&copy;<?php echo date('Y'); ?></small>
+    <small>&copy;<?php echo date('Y'); ?> Whichsky</small>
 </footer>
 </div>
 <script src="/templates/assets/js/whichsky.js"></script>
