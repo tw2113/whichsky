@@ -771,3 +771,36 @@ body {
   margin: 0 auto;
   padding: 15px;
   width: 960px; }
+
+nav ul, footer ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-around;
+  -webkit-align-content: stretch;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+  -ms-flex-line-pack: stretch;
+  -ms-flex-align: start;
+  display: -ms-flexbox;
+  -moz-box-direction: normal;
+  -moz-box-orient: horizontal;
+  -moz-box-pack: justify;
+  -moz-box-align: start;
+  display: -moz-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: stretch;
+  align-items: flex-start;
+  padding-left: 0; }
+nav li, footer li {
+  list-style: none; }
