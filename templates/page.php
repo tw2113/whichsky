@@ -28,6 +28,6 @@
     <small>&copy;<?php echo date('Y'); ?> Whichsky</small>
 </footer>
 </div>
-<script src="/templates/assets/js/whichsky.js"></script>
+<script src="/templates/assets/js/whichsky.min.js"></script>
 </body>
 </html>
