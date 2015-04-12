@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 		},
 		min: {
 			dist: {
-				src: ['templates/assets/js/<%= pkg.name %>.js'],
+				src: ['templates/assets/js/src/<%= pkg.name %>.js'],
 				dest: 'templates/assets/js/<%= pkg.name %>.min.js'
 			}
 		},
