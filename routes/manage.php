@@ -61,5 +61,9 @@ comments
 
     $data['form'] = $form;
     // Render a template
-    echo $templates->render('manage');
+    echo $templates->render('manage', $data );
+});
+
+$app->post('/manage/', function() use ($app) {
+
 });
