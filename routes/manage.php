@@ -99,12 +99,5 @@ on_wishlist
 comments
      */
 
-
-    $data['form'] = $form;
-    // Render a template
-    echo $templates->render('tmpl-manage', $data );
-});
-
-$app->post('/manage/', function() use ($app) {
-
-});
+    return $form;
+}
