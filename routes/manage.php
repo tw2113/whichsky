@@ -90,7 +90,7 @@ function render_manage_form() {
         $form .= '</div>';
     }
 
-    $form .= $builder->button('Add whisky')->addClass('pure-button button-secondary button-xlarge');
+    $form .= $builder->submit('Add whisky')->addClass('pure-button button-secondary button-xlarge');
     $form .= $builder->close();
 
     /*
