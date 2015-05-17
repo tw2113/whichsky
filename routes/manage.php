@@ -9,7 +9,7 @@ use \League\Plates\Engine as Plates;
 use \AdamWathan\Form\FormBuilder;
 use Respect\Validation\Validator as v;
 
-$app->get('/manage/', function() use ($app) {
+$app->get('/manage/new/', function() use ($app) {
 
     $templates = new Plates('./templates');
 
