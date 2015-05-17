@@ -7,6 +7,7 @@ use \Slim\Logger as Logger;
 use \Aura\SqlQuery\QueryFactory;
 use \League\Plates\Engine as Plates;
 use \AdamWathan\Form\FormBuilder;
+use Respect\Validation\Validator as v;
 
 $app->get('/manage/', function() use ($app) {
 
