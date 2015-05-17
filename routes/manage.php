@@ -13,6 +13,46 @@ $app->get('/manage/new/', function() use ($app) {
 
     $templates = new Plates('./templates');
 
+    $data['form'] = render_manage_form();
+
+
+    // Render a template
+    echo $templates->render('tmpl-manage', $data );
+});
+
+$app->get('/manage/{id}/', function() use ($app) {
+
+    $templates = new Plates('./templates');
+
+    $data['form'] = render_manage_form();
+
+    // Render a template
+    echo $templates->render('tmpl-manage', $data );
+});
+
+$app->post('/manage/new/', function() use ($app) {
+
+    $templates = new Plates('./templates');
+
+    # https://github.com/Respect/Validation/blob/master/docs/VALIDATORS.md
+
+    $data['form'] = render_manage_form();
+
+    echo $templates->render('tmpl-manage', $data );
+});
+
+$app->post('/manage/{id}/', function() use ($app) {
+
+    $templates = new Plates('./templates');
+
+    # https://github.com/Respect/Validation/blob/master/docs/VALIDATORS.md
+
+    $data['form'] = render_manage_form();
+
+    echo $templates->render('tmpl-manage', $data );
+});
+
+function render_manage_form() {
     $builder = new FormBuilder;
 
     $fields = array(
