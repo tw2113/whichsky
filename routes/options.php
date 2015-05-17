@@ -12,5 +12,5 @@ $app->get('/options/', function() use ($app) {
     $templates = new Plates('./templates');
 
     // Render a template
-    echo $templates->render('options');
+    echo $templates->render('tmpl-options');
 });

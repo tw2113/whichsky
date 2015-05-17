@@ -12,5 +12,5 @@ $app->get('/whisky/', function() use ($app) {
     $templates = new Plates('./templates');
 
     // Render a template
-    echo $templates->render('whisky');
+    echo $templates->render('tmpl-whisky');
 });

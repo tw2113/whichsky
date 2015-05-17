@@ -17,5 +17,5 @@ $app->get('/whiskies/', function() use ($app) {
         'five'  => 'six'
     ];
     // Render a template
-    echo $templates->render('whiskies',$data);
+    echo $templates->render('tmpl-whiskies',$data);
 });
