@@ -26,7 +26,7 @@
 <?php echo $this->section('content'); ?>
 
 <footer id="colophon" role="contentinfo" class="pure-u-1-1">
-    <p><small>&copy;<?php echo date('Y'); ?> Whichsky</small> - <a href="/">Home</a> | <a href="/whiskies/">Whiskies</a> | <a href="/wishlist/">Wishlist</a> | <a href="/manage/">Manage</a> | <a href="/options/">Options</a>.</p>
+    <p><small>&copy;<?php echo date('Y'); ?> Whichsky</small> - <a href="/">Home</a> | <a href="/whiskies/">Whiskies</a> | <a href="/wishlist/">Wishlist</a> | <a href="/manage/new/">Manage</a> | <a href="/options/">Options</a>.</p>
 </footer>
 </div>
 <script src="/templates/assets/js/whichsky.min.js"></script>
