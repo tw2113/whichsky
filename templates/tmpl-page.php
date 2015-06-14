@@ -17,7 +17,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/whiskies/">Whiskies</a></li>
             <li><a href="/wishlist/">Wishlist</a></li>
-            <li><a href="/manage/">Manage</a></li>
+            <li><a href="/manage/new/">Manage</a></li>
             <li><a href="/options/">Options</a></li>
         </ul>
     </nav>
