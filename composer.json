@@ -1,6 +1,6 @@
 {
     "require": {
-        "slim/slim": "dev-develop",
+        "slim/slim": "3.0.*@beta",
         "entomb/slim-json-api": "~1.1",
         "aura/sql": "~2.4",
         "aura/sqlquery": "~2.4",
