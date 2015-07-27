@@ -16,7 +16,7 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
 
     $templates = $app->plates;
 
-    $data['form'] = render_manage_form();
+    $type = $request->getMethod();
 
 
     // Render a template
