@@ -33,11 +33,15 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
     echo $templates->render('tmpl-manage', $data );
 });
 
-$app->get('/manage/{id}/', function() use ($app) {
-
+/**
+ * Displays information about a chosen whisky.
+ */
+$app->get('/manage/{id}/', function( $request, $response, $args ) use ($app) {
     $templates = $app->plates;
 
-    $data['form'] = render_manage_form();
+    $whisky_id = $args['id'];
+    $whisky_data = array(); # Need to fetch data for specified ID
+    $data['form'] = render_manage_form( $whisky_data );
 
     // Render a template
     echo $templates->render('tmpl-manage', $data );
