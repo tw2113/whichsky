@@ -55,9 +55,12 @@ $app->post('/manage/{id}/', function( $request, $response, $args ) use ($app) {
     $templates = $app->plates;
 
 
+    $form_data = $request->getParsedBody();
+    $whisky_id = $args['id'];
+    $whisky_data = array(); # Populate with sanitized $form_data and after saving.
     # https://github.com/Respect/Validation/blob/master/docs/VALIDATORS.md
 
-    $data['form'] = render_manage_form();
+    $data['form'] = render_manage_form( $whisky_data );
 
     echo $templates->render('tmpl-manage', $data );
 });
