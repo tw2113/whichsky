@@ -105,12 +105,12 @@ function render_manage_form( $whisky_data = array() ) {
         switch ( $field['type'] ) {
             case 'text':
                 $form .= $builder->label( $field['label'] )->forId( $field['id'] ) . '<br/>';
-                $form .= $builder->text( $field['id'] )->id( $field['id'] ) . '<br/>';
+                $form .= $builder->text( $field['id'] )->id( $field['id'] )->value( $field['value'] ) . '<br/>';
                 break;
 
             case 'textarea':
                 $form .= $builder->label( $field['label'] )->forId( $field['id'] ) . '<br/>';
-                $form .= $builder->textarea( $field['id'] )->id( $field['id'] )->rows(5);
+                $form .= $builder->textarea( $field['id'] )->id( $field['id'] )->rows(5)->value( $field['value'] );
                 break;
         }
         $form .= '</div>';
