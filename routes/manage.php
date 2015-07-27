@@ -52,6 +52,11 @@ $app->post('/manage/{id}/', function() use ($app) {
     echo $templates->render('tmpl-manage', $data );
 });
 
+/**
+ * Renders our Whisky management form.
+ *
+ * @return $this|string
+ */
 function render_manage_form() {
     $builder = new FormBuilder;
 
