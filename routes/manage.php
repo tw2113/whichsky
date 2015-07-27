@@ -9,7 +9,10 @@ use \League\Plates\Engine as Plates;
 use \AdamWathan\Form\FormBuilder;
 use Respect\Validation\Validator as v;
 
-$app->get('/manage/new/', function() use ($app) {
+/**
+ * Handle new whisky form display/submission.
+ */
+$app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $args ) use ( $app ) {
 
     $templates = $app->plates;
 
