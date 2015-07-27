@@ -75,6 +75,12 @@ $app->post('/manage/{id}/', function( $request, $response, $args ) use ($app) {
 function render_manage_form( $whisky_data = array() ) {
     $builder = new FormBuilder;
 
+    if ( empty( $whisky_data ) ) {
+        $whisky_data = get_default_fields();
+    }
+
+    $data = populate_data( $whisky_data );
+
     $fields = array(
         array( 'type' => 'text', 'label' => 'Whisky Name', 'id' => 'whisky_name' ),
         array( 'type' => 'text', 'label' => 'Distilllery Name', 'id' => 'distillery_name' ),
