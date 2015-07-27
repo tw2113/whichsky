@@ -18,6 +18,17 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
 
     $type = $request->getMethod();
 
+    $whisky_data = array(); # Populate with sanitized $form_data and after saving.
+
+    if ( 'POST' === $type ) {
+        # https://github.com/Respect/Validation/blob/master/docs/VALIDATORS.md
+        $form_data = $request->getParsedBody();
+        # Validate and populate $whisky_data with values.
+        # Redirect to new ID page after successful POST ?
+        #   May not need to pass in $whisky_data to render_manage_form() if we redirect.
+    }
+
+    $data['form'] = render_manage_form( $whisky_data );
 
     // Render a template
     echo $templates->render('tmpl-manage', $data );
