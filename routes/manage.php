@@ -6,14 +6,13 @@ use \Slim\Slim as Slim;
 use \Slim\Logger as Logger;
 use \Aura\SqlQuery\QueryFactory;
 use \League\Plates\Engine as Plates;
-use \AdamWathan\Form\FormBuilder;
 use Respect\Validation\Validator as v;
 
 /**
  * Handle new whisky form display/submission.
  */
 $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $args ) use ( $app ) {
-
+    $helpers = $app->form_helpers;
     $templates = $app->plates;
 
     $type = $request->getMethod();
@@ -28,7 +27,7 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
         #   May not need to pass in $whisky_data to render_manage_form() if we redirect.
     }
 
-    $data['form'] = render_manage_form( $whisky_data );
+    $data['form'] = $helpers->render_manage_form( $whisky_data );
 
     echo $templates->render('tmpl-manage', $data );
 });
@@ -37,11 +36,13 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
  * Displays information about a chosen whisky.
  */
 $app->get('/manage/{id}/', function( $request, $response, $args ) use ($app) {
+    $helpers = $app->form_helpers;
+
     $templates = $app->plates;
 
     $whisky_id = $args['id'];
     $whisky_data = array(); # Need to fetch data for specified ID
-    $data['form'] = render_manage_form( $whisky_data );
+    $data['form'] = $helpers->render_manage_form( $whisky_data );
 
     // Render a template
     echo $templates->render('tmpl-manage', $data );
@@ -51,7 +52,7 @@ $app->get('/manage/{id}/', function( $request, $response, $args ) use ($app) {
  * Updates information about an existing whisky.
  */
 $app->post('/manage/{id}/', function( $request, $response, $args ) use ($app) {
-
+    $helpers = $app->form_helpers;
     $templates = $app->plates;
 
 
@@ -60,7 +61,7 @@ $app->post('/manage/{id}/', function( $request, $response, $args ) use ($app) {
     $whisky_data = array(); # Populate with sanitized $form_data and after saving.
     # https://github.com/Respect/Validation/blob/master/docs/VALIDATORS.md
 
-    $data['form'] = render_manage_form( $whisky_data );
+    $data['form'] = $helpers->render_manage_form( $whisky_data );
 
     echo $templates->render('tmpl-manage', $data );
 });
