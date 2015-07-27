@@ -127,3 +127,44 @@ comments
 
     return $form;
 }
+
+/**
+ * Return array of default field keys.
+ *
+ * @return array Array of our default field keys
+ */
+function get_default_fields() {
+    return [
+        'whisky_name' => '',
+        'distillery_name' => '',
+        'years_matured' => '',
+        'style' => '',
+        'years_matured' => '',
+        'volume' => '',
+        'price' => '',
+        'date_purchased' => '',
+        'date_opened' => '',
+        'abv' => '',
+        'packaging_description' => '',
+        'aroma' => '',
+        'palet' => '',
+        'finish' => ''
+    ];
+}
+
+/**
+ * Fills in values for the form.
+ *
+ * @param array $whisky_data Array of our provided values.
+ *
+ * @return array
+ */
+function populate_data( $whisky_data = array() ) {
+
+    # $whisky_data will be populated either with our saved whisky data or empty strings.
+    foreach ($whisky_data as $key => $value) {
+        $whisky_data[$key] = ( ! empty( $value ) ) ? $value : '';
+    }
+
+    return $whisky_data;
+}
