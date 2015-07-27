@@ -82,20 +82,20 @@ function render_manage_form( $whisky_data = array() ) {
     $data = populate_data( $whisky_data );
 
     $fields = array(
-        array( 'type' => 'text', 'label' => 'Whisky Name', 'id' => 'whisky_name' ),
-        array( 'type' => 'text', 'label' => 'Distilllery Name', 'id' => 'distillery_name' ),
-        array( 'type' => 'text', 'label' => 'Years Matured', 'id' => 'years_matured' ),
-        array( 'type' => 'text', 'label' => 'Style', 'id' => 'style' ),
-        array( 'type' => 'text', 'label' => 'Years Matured', 'id' => 'years_matured' ),
-        array( 'type' => 'text', 'label' => 'Volume', 'id' => 'volume' ),
-        array( 'type' => 'text', 'label' => 'Price', 'id' => 'price' ),
-        array( 'type' => 'text', 'label' => 'Date Purchased', 'id' => 'date_purchased' ),
-        array( 'type' => 'text', 'label' => 'Date Opened', 'id' => 'date_opened' ),
-        array( 'type' => 'text', 'label' => 'ABV', 'id' => 'abv' ),
-        array( 'type' => 'textarea', 'label' => 'Packaging Description', 'id' => 'packaging_description' ),
-        array( 'type' => 'textarea', 'label' => 'Aroma', 'id' => 'aroma' ),
-        array( 'type' => 'textarea', 'label' => 'Palet', 'id' => 'palet' ),
-        array( 'type' => 'textarea', 'label' => 'Finish', 'id' => 'finish' ),
+        array( 'type' => 'text', 'label' => 'Whisky Name', 'id' => 'whisky_name', 'value' => $data['whisky_name'] ),
+        array( 'type' => 'text', 'label' => 'Distilllery Name', 'id' => 'distillery_name', 'value' => $data['distillery_name'] ),
+        array( 'type' => 'text', 'label' => 'Years Matured', 'id' => 'years_matured', 'value' => $data['years_matured'] ),
+        array( 'type' => 'text', 'label' => 'Style', 'id' => 'style', 'value' => $data['style'] ),
+        array( 'type' => 'text', 'label' => 'Years Matured', 'id' => 'years_matured', 'value' => $data['years_matured'] ),
+        array( 'type' => 'text', 'label' => 'Volume', 'id' => 'volume', 'value' => $data['volume'] ),
+        array( 'type' => 'text', 'label' => 'Price', 'id' => 'price', 'value' => $data['price'] ),
+        array( 'type' => 'text', 'label' => 'Date Purchased', 'id' => 'date_purchased', 'value' => $data['date_purchased'] ),
+        array( 'type' => 'text', 'label' => 'Date Opened', 'id' => 'date_opened', 'value' => $data['date_opened'] ),
+        array( 'type' => 'text', 'label' => 'ABV', 'id' => 'abv', 'value' => $data['abv'] ),
+        array( 'type' => 'textarea', 'label' => 'Packaging Description', 'id' => 'packaging_description', 'value' => $data['packaging_description'] ),
+        array( 'type' => 'textarea', 'label' => 'Aroma', 'id' => 'aroma', 'value' => $data['aroma'] ),
+        array( 'type' => 'textarea', 'label' => 'Palet', 'id' => 'palet', 'value' => $data['palet'] ),
+        array( 'type' => 'textarea', 'label' => 'Finish', 'id' => 'finish', 'value' => $data['finish'] ),
     );
 
     $form  = $builder->open()->addClass('pure-form');
