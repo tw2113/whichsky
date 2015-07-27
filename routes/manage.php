@@ -66,7 +66,9 @@ $app->post('/manage/{id}/', function( $request, $response, $args ) use ($app) {
 });
 
 /**
- * Renders our Whisky management form.
+ * Renders our whisky management form.
+ *
+ * @param array $whisky_data Array of data to populate the form with.
  *
  * @return $this|string
  */
