@@ -5,7 +5,7 @@ set_include_path(dirname(__FILE__) . '/../' . PATH_SEPARATOR . get_include_path(
 date_default_timezone_set('America/Chicago');
 
 // Enable Composer autoloader
-require dirname(__DIR__) . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 //Register non-Slim autoloader
 function customAutoLoader($class)
