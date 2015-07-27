@@ -4,6 +4,7 @@ namespace tw2113\Whichsky;
 
 use \Slim as Slim;
 use Aura\SqlQuery\QueryFactory;
+use \League\Plates\Engine as Plates;
 
 require 'vendor/autoload.php';
 
@@ -13,6 +14,9 @@ $app = new Slim\App(
 		'log.enabled' => true
 	)
 );
+
+# Add so we do not need to instantiate everywhere.
+$app->plates = new Plates( './templates' );
 
 require 'routes/home.php';
 require 'routes/whiskies.php';
