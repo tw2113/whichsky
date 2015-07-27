@@ -72,7 +72,7 @@ $app->post('/manage/{id}/', function( $request, $response, $args ) use ($app) {
  *
  * @return $this|string
  */
-function render_manage_form() {
+function render_manage_form( $whisky_data = array() ) {
     $builder = new FormBuilder;
 
     $fields = array(
