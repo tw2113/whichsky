@@ -52,9 +52,8 @@ $app->get('/manage/{id}/', function( $request, $response, $args ) use ($app) {
  */
 $app->post('/manage/{id}/', function( $request, $response, $args ) use ($app) {
 
-$app->post('/manage/{id}/', function() use ($app) {
+    $templates = $app->plates;
 
-    $templates = new Plates('./templates');
 
     # https://github.com/Respect/Validation/blob/master/docs/VALIDATORS.md
 
