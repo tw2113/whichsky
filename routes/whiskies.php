@@ -9,7 +9,7 @@ use \League\Plates\Engine as Plates;
 
 $app->get('/whiskies/', function() use ($app) {
 
-    $templates = new Plates('./templates');
+    $templates = $app->plates;
 
     $data['whiskies'] = [
         'one'   => 'two',
