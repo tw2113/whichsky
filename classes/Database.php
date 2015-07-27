@@ -1,6 +1,6 @@
 <?php
 
-namespace tw2113\Whichsky\Database;
+namespace tw2113\Whichsky;
 
 class Database {
 

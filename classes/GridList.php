@@ -1,8 +1,6 @@
 <?php
 
-namespace tw2113\Whichsky\Database;
-
-use tw2113\Whichsky\Display;
+namespace tw2113\Whichsky;
 
 /**
  * Display listing of data with markup suitable for a grid.
