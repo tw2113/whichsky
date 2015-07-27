@@ -2,7 +2,7 @@
 set_include_path(dirname(__FILE__) . '/../' . PATH_SEPARATOR . get_include_path());
 
 // Set timezone
-date_default_timezone_set('America/New_York');
+date_default_timezone_set('America/Chicago');
 
 // Enable Composer autoloader
 require dirname(__DIR__) . '/vendor/autoload.php';
