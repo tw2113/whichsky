@@ -11,7 +11,7 @@ use Respect\Validation\Validator as v;
 
 $app->get('/manage/new/', function() use ($app) {
 
-    $templates = new Plates('./templates');
+    $templates = $app->plates;
 
     $data['form'] = render_manage_form();
 
@@ -22,7 +22,7 @@ $app->get('/manage/new/', function() use ($app) {
 
 $app->get('/manage/{id}/', function() use ($app) {
 
-    $templates = new Plates('./templates');
+    $templates = $app->plates;
 
     $data['form'] = render_manage_form();
 
