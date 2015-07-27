@@ -47,16 +47,10 @@ $app->get('/manage/{id}/', function( $request, $response, $args ) use ($app) {
     echo $templates->render('tmpl-manage', $data );
 });
 
-$app->post('/manage/new/', function() use ($app) {
-
-    $templates = new Plates('./templates');
-
-    # https://github.com/Respect/Validation/blob/master/docs/VALIDATORS.md
-
-    $data['form'] = render_manage_form();
-
-    echo $templates->render('tmpl-manage', $data );
-});
+/**
+ * Updates information about an existing whisky.
+ */
+$app->post('/manage/{id}/', function( $request, $response, $args ) use ($app) {
 
 $app->post('/manage/{id}/', function() use ($app) {
 
