@@ -30,7 +30,6 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
 
     $data['form'] = render_manage_form( $whisky_data );
 
-    // Render a template
     echo $templates->render('tmpl-manage', $data );
 });
 
