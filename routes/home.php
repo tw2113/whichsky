@@ -9,7 +9,7 @@ use \League\Plates\Engine as Plates;
 
 $app->get('/', function() use ($app) {
 
-    $templates = new Plates('./templates');
+    $templates = $app->plates;
 
     // Render a template
     echo $templates->render('tmpl-home', ['name' => 'Michael']);
