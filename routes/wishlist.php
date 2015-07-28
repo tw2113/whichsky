@@ -7,10 +7,10 @@ use \Slim\Logger as Logger;
 use \Aura\SqlQuery\QueryFactory;
 use \League\Plates\Engine as Plates;
 
-$app->get('/wishlist/', function() use ($app) {
+$app->get( '/wishlist/', function () use ( $app ) {
 
     $templates = $app->plates;
 
     // Render a template
-    echo $templates->render('tmpl-wishlist');
-});
+    echo $templates->render( 'tmpl-wishlist' );
+} );

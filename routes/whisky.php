@@ -7,7 +7,7 @@ use \Slim\Logger as Logger;
 use \Aura\SqlQuery\QueryFactory;
 use \League\Plates\Engine as Plates;
 
-$app->get('/whisky/{id}/', function( $request, $response, $args ) use ($app) {
+$app->get( '/whisky/{id}/', function ( $request, $response, $args ) use ( $app ) {
 
     $templates = $app->plates;
 
@@ -20,13 +20,13 @@ $app->get('/whisky/{id}/', function( $request, $response, $args ) use ($app) {
 
     $select
         ->cols(
-            array( '*' )
+            [ '*' ]
         )
         ->from( 'whiskies as w' )
         ->where( 'id = :id' )
-        ->bindValues(array(
+        ->bindValues( [
             'id' => $args['id']
-        ));
+        ] );
 
     // a PDO connection
     try {
@@ -43,5 +43,5 @@ $app->get('/whisky/{id}/', function( $request, $response, $args ) use ($app) {
     }
 
     // Render a template
-    echo $templates->render('tmpl-whisky');
-});
+    echo $templates->render( 'tmpl-whisky' );
+} );

@@ -6,7 +6,8 @@ namespace tw2113\Whichsky;
  * Interface Display
  * @package tw2113\Whichsky
  */
-interface Display {
+interface Display
+{
 
     public function listing( $list );
 

@@ -10,15 +10,15 @@ use \AdamWathan\Form\FormBuilder as FormBuilder;
 require 'vendor/autoload.php';
 
 $app = new Slim\App(
-	array(
-		'debug' => true,
+	[
+		'debug'       => true,
 		'log.enabled' => true
-	)
+	]
 );
 
 # Add so we do not need to instantiate everywhere.
-$app->plates = new Plates( './templates' );
-$app->form_helpers = new Form_Helpers( new FormBuilder()  );
+$app->plates       = new Plates( './templates' );
+$app->form_helpers = new Form_Helpers( new FormBuilder() );
 
 require 'routes/home.php';
 require 'routes/whiskies.php';

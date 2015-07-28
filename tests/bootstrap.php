@@ -1,23 +1,24 @@
 <?php
-set_include_path(dirname(__FILE__) . '/../' . PATH_SEPARATOR . get_include_path());
+set_include_path( dirname( __FILE__ ) . '/../' . PATH_SEPARATOR . get_include_path() );
 
 // Set timezone
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set( 'America/Chicago' );
 
 // Enable Composer autoloader
 require __DIR__ . '/../vendor/autoload.php';
 
 //Register non-Slim autoloader
-function customAutoLoader($class)
+function customAutoLoader( $class )
 {
-    $file = dirname(__FILE__) . '/' . $class . '.php';
-    if (file_exists($file)) {
+    $file = dirname( __FILE__ ) . '/' . $class . '.php';
+    if (file_exists( $file )) {
         require $file;
     } else {
         return;
     }
 }
-spl_autoload_register('customAutoLoader');
+
+spl_autoload_register( 'customAutoLoader' );
 
 // Prevent session cookies
-ini_set('session.use_cookies', 0);
+ini_set( 'session.use_cookies', 0 );

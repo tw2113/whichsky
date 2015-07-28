@@ -7,7 +7,7 @@ use \Slim\Logger as Logger;
 use \Aura\SqlQuery\QueryFactory;
 use \League\Plates\Engine as Plates;
 
-$app->get('/whiskies/', function() use ($app) {
+$app->get( '/whiskies/', function () use ( $app ) {
 
     $templates = $app->plates;
 
@@ -20,7 +20,7 @@ $app->get('/whiskies/', function() use ($app) {
 
     $select
         ->cols(
-            array( '*' )
+            [ '*' ]
         )->from( 'whiskies as w' );
 
     // a PDO connection
@@ -37,12 +37,12 @@ $app->get('/whiskies/', function() use ($app) {
         echo 'Caught exception: ', $e->getMessage(), "\n";
     }
 
-    $data['whiskies'] = [];
-    foreach( $results as $result ) {
-        foreach( $result as $key => $value ){
+    $data['whiskies'] = [ ];
+    foreach ($results as $result) {
+        foreach ($result as $key => $value) {
             $data['whiskies'][$key] = $value;
         }
     }
     // Render a template
-    echo $templates->render('tmpl-whiskies',$data);
-});
+    echo $templates->render( 'tmpl-whiskies', $data );
+} );

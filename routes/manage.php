@@ -12,14 +12,14 @@ use Respect\Validation\Validator as v;
  * Handle new whisky form display/submission.
  */
 $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $args ) use ( $app ) {
-    $helpers = $app->form_helpers;
+    $helpers   = $app->form_helpers;
     $templates = $app->plates;
 
     $type = $request->getMethod();
 
-    $whisky_data = array(); # Populate with sanitized $form_data and after saving.
+    $whisky_data = [ ]; # Populate with sanitized $form_data and after saving.
 
-    if ( 'POST' === $type ) {
+    if ('POST' === $type) {
         # https://github.com/Respect/Validation/blob/master/docs/VALIDATORS.md
         $form_data = $request->getParsedBody();
         # Validate and populate $whisky_data with values.
@@ -64,39 +64,39 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
 
     $data['form'] = $helpers->render_manage_form( $whisky_data );
 
-    echo $templates->render('tmpl-manage', $data );
-});
+    echo $templates->render( 'tmpl-manage', $data );
+} );
 
 /**
  * Displays information about a chosen whisky.
  */
-$app->get('/manage/{id}/', function( $request, $response, $args ) use ($app) {
+$app->get( '/manage/{id}/', function ( $request, $response, $args ) use ( $app ) {
     $helpers = $app->form_helpers;
 
     $templates = $app->plates;
 
-    $whisky_id = $args['id'];
-    $whisky_data = array(); # Need to fetch data for specified ID
+    $whisky_id    = $args['id'];
+    $whisky_data  = [ ]; # Need to fetch data for specified ID
     $data['form'] = $helpers->render_manage_form( $whisky_data );
 
     // Render a template
-    echo $templates->render('tmpl-manage', $data );
-});
+    echo $templates->render( 'tmpl-manage', $data );
+} );
 
 /**
  * Updates information about an existing whisky.
  */
-$app->post('/manage/{id}/', function( $request, $response, $args ) use ($app) {
-    $helpers = $app->form_helpers;
+$app->post( '/manage/{id}/', function ( $request, $response, $args ) use ( $app ) {
+    $helpers   = $app->form_helpers;
     $templates = $app->plates;
 
 
-    $form_data = $request->getParsedBody();
-    $whisky_id = $args['id'];
-    $whisky_data = array(); # Populate with sanitized $form_data and after saving.
+    $form_data   = $request->getParsedBody();
+    $whisky_id   = $args['id'];
+    $whisky_data = [ ]; # Populate with sanitized $form_data and after saving.
     # https://github.com/Respect/Validation/blob/master/docs/VALIDATORS.md
 
     $data['form'] = $helpers->render_manage_form( $whisky_data );
 
-    echo $templates->render('tmpl-manage', $data );
-});
+    echo $templates->render( 'tmpl-manage', $data );
+} );
