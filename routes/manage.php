@@ -25,6 +25,41 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
         # Validate and populate $whisky_data with values.
         # Redirect to new ID page after successful POST ?
         #   May not need to pass in $whisky_data to render_manage_form() if we redirect.
+
+        /*$c['config'] = require dirname( dirname( __FILE__ ) ) . '/config/config.php';
+
+        $config = $c['config'];
+
+        $query_factory = new QueryFactory( 'sqlite' );
+        $insert        = $query_factory->newInsert();*/
+
+        /*
+         * $insert->into($table)->cols( array_keys( $form_data ) )->bindValues($form_data);
+         * $this->db->perform($insert->__toString(),$insert->getBindValues());
+         * $insert->getLastInsertIdName() //what does this one do?
+         */
+        /*$insert
+            ->into( 'whiskies' )
+            ->cols(
+                array(
+                    'name'           => 'Highland Single Malt',
+                    'distiller_name' => 'Tomatin'
+                )
+            );*/
+
+        // a PDO connection
+        /*try {
+            $pdo = new \PDO( $config['db.pdo.connect'] );
+            $pdo->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
+            #$pdo->exec( 'CREATE TABLE whiskies (name TEXT, distiller_name TEXT)');
+            $sth = $pdo->prepare( $insert->__toString() );
+            $sth->execute( $insert->getBindValues() );
+
+            // get the results back as an associative array
+            $result = $sth->fetch( \PDO::FETCH_ASSOC );
+        } catch ( \Exception $e ) {
+            echo 'Caught exception: ', $e->getMessage(), "\n";
+        }*/
     }
 
     $data['form'] = $helpers->render_manage_form( $whisky_data );
