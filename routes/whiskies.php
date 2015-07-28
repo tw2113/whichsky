@@ -11,11 +11,38 @@ $app->get('/whiskies/', function() use ($app) {
 
     $templates = $app->plates;
 
-    $data['whiskies'] = [
-        'one'   => 'two',
-        'three' => 'four',
-        'five'  => 'six'
-    ];
+    $c['config'] = require dirname( dirname( __FILE__ ) ) . '/config/config.php';
+
+    $config = $c['config'];
+
+    $query_factory = new QueryFactory( 'sqlite' );
+    $select        = $query_factory->newSelect();
+
+    $select
+        ->cols(
+            array( '*' )
+        )->from( 'whiskies as w' );
+
+    // a PDO connection
+    try {
+        $pdo = new \PDO( $config['db.pdo.connect'] );
+        $pdo->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
+
+        $sth = $pdo->prepare( $select->__toString() );
+        $sth->execute( $select->getBindValues() );
+
+        // get the results back as an associative array
+        $results = $sth->fetchAll( \PDO::FETCH_ASSOC );
+    } catch ( \Exception $e ) {
+        echo 'Caught exception: ', $e->getMessage(), "\n";
+    }
+
+    $data['whiskies'] = [];
+    foreach( $results as $result ) {
+        foreach( $result as $key => $value ){
+            $data['whiskies'][$key] = $value;
+        }
+    }
     // Render a template
     echo $templates->render('tmpl-whiskies',$data);
 });
