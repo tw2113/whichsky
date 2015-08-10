@@ -21,7 +21,7 @@
         "aura/sql": "~2.4",
         "aura/sqlquery": "~2.4",
         "league/plates": "~3.1",
-        "adamwathan/form": "0.5.*",
+        "adamwathan/form": "~0.5",
         "respect/validation": "^0.9.1"
     },
     "require-dev": {
