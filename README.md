@@ -1,5 +1,5 @@
 # Whichsky
-Self-hosted whisky tasting tracking.
+Self-hosted whisky tasting tracking based on the [Slim Framework](https://github.com/slimphp/Slim).
 
 [![Author](http://img.shields.io/badge/author-@tw2113-blue.svg?style=flat-square)](https://twitter.com/tw2113)
 [![Source Code](http://img.shields.io/badge/source-tw2113/whichsky-blue.svg?style=flat-square)](https://github.com/tw2113/whichsky)
