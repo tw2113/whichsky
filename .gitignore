@@ -4,3 +4,4 @@ vendor
 node_modules
 config/config.php
 *.sqlite3
+logs/*
