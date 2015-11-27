@@ -2,8 +2,9 @@
 
 namespace tw2113\Whichsky;
 
-use \Slim\Logger as Logger;
 use \Aura\SqlQuery\QueryFactory;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 $app->get( '/', function () use ( $app ) {
 

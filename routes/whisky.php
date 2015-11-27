@@ -3,9 +3,10 @@
 namespace tw2113\Whichsky;
 
 use \Slim\Slim as Slim;
-use \Slim\Logger as Logger;
 use \Aura\SqlQuery\QueryFactory;
 use \League\Plates\Engine as Plates;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 $app->get( '/whisky/{id}/', function ( $request, $response, $args ) use ( $app ) {
 
