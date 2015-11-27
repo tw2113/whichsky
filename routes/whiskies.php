@@ -35,7 +35,11 @@ $app->get( '/whiskies/', function () use ( $app ) {
         // get the results back as an associative array
         $results = $sth->fetchAll( \PDO::FETCH_ASSOC );
     } catch ( \Exception $e ) {
-        echo 'Caught exception: ', $e->getMessage(), "\n";
+        // create a log channel
+        $log = new Logger( 'name' );
+        $log->pushHandler( new StreamHandler( 'logs/error.log', Logger::WARNING ) );
+
+        $log->addError( 'Caught exception: ' . $e->getMessage() );
     }
 
     $data['whiskies'] = [ ];
