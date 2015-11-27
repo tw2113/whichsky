@@ -43,9 +43,11 @@ $app->get( '/whiskies/', function () use ( $app ) {
     }
 
     $data['whiskies'] = [ ];
-    foreach ($results as $result) {
-        foreach ($result as $key => $value) {
-            $data['whiskies'][$key] = $value;
+    if ( ! empty( $results ) ) {
+        foreach ($results as $result) {
+            foreach ($result as $key => $value) {
+                $data['whiskies'][$key] = $value;
+            }
         }
     }
     // Render a template
