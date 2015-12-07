@@ -16,7 +16,7 @@
       "issues": "https://github.com/tw2113/Whichsky/issues"
     },
     "require": {
-        "slim/slim": "^3@beta",
+        "slim/slim": "^3.0",
         "entomb/slim-json-api": "^1.1",
         "aura/sql": "^2.4",
         "aura/sqlquery": "^2.4",
