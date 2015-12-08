@@ -42,11 +42,12 @@ $app->get( '/whiskies/', function () use ( $app ) {
     }
 
     $data['whiskies'] = [ ];
-    if ( ! empty( $results ) ) {
+    if ( ! empty( $results )) {
         foreach ($results as $result) {
             foreach ($result as $key => $value) {
-                $data['whiskies'][$key] = $value;
+                $data['th'][] = $key;
             }
+            $data['whiskies'][] = $result;
         }
     }
     // Render a template
