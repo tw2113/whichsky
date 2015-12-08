@@ -69,7 +69,7 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
 /**
  * Displays information about a chosen whisky.
  */
-$app->get( '/manage/{id}/', function ( $request, $response, $args ) use ( $app ) {
+$app->get( '/manage/{id:[0-9]+}/', function ( $request, $response, $args ) use ( $app ) {
     $helpers = $app->form_helpers;
 
     $templates = $app->plates;
