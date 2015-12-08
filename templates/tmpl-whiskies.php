@@ -3,11 +3,18 @@
 <div class="pure-u-1-1">
     <h1>This page will list your taste/purchased/etc whiskies.</h1>
 
-    <ul>
-        <?php
-        foreach ($whiskies as $sip) {
-            echo '<li>' . $this->e( $sip ) . '</li>';
-        }
-        ?>
-    </ul>
+    <table class="pure-table pure-table-horizontal pure-table-striped">
+        <thead><tr>
+        <?php foreach ($th as $head) : ?>
+            <th><?= $this->e( $head ) ?></th>
+        <?php endforeach ?>
+        </tr></thead>
+        <?php foreach ($whiskies as $whisky) : ?>
+        <tr>
+            <?php foreach ($whisky as $sip) : ?>
+                <td><?= $this->e( $sip ) ?></td>
+            <?php endforeach ?>
+        </tr>
+        <?php endforeach ?>
+    </table>
 </div>
