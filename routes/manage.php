@@ -16,11 +16,9 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
     $helpers   = $app->form_helpers;
     $templates = $app->plates;
 
-    $type = $request->getMethod();
-
     $whisky_data = [ ]; # Populate with sanitized $form_data and after saving.
 
-    if ('POST' === $type) {
+    if ($request->isPost()) {
         # https://github.com/Respect/Validation/blob/master/docs/VALIDATORS.md
         $form_data = $request->getParsedBody();
         # Validate and populate $whisky_data with values.
