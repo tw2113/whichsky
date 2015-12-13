@@ -119,6 +119,7 @@ class Database
 
     /**
      * Sets the table names to create.
+     *
      * @since 1.0.0
      */
     private function setTableNames()
@@ -130,6 +131,7 @@ class Database
 
     /**
      * Adds an individual table to the database.
+     *
      * @since 1.0.0
      *
      * @param string $table Name of the table to create.
@@ -166,7 +168,9 @@ class Database
 
     /**
      * Sets our default database columns.
+     *
      * @since 1.0.0
+     *
      * @return mixed
      */
     private function setColumns()
@@ -203,10 +207,10 @@ class Database
 
     /**
      * Returns columns for a single specified table.
+     *
      * @since 1.0.0
      *
      * @param $table Table name whose columns are requested
-     *
      * @return array Array of columns for the table.
      */
     private function getSingleTableColumns( $table )
