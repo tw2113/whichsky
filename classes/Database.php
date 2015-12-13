@@ -38,7 +38,21 @@ class Database
      */
     private $dataPath;
 
-    public function __construct( $args = [ ] )
+    /**
+     * PDO connection object
+     * @since 1.0.0
+     * @var PDO
+     */
+    private $pdo_connection;
+
+    /**
+     * Logger instance.
+     * @since 1.0.0
+     * @var object
+     */
+    private $logger;
+
+    public function __construct( $args = [ ], LoggerInterface $logger )
     {
         $this->dataPath   = './data/';
         $this->configPath = './config/config.php';
