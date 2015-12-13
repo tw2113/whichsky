@@ -18,6 +18,7 @@ $app = new Slim\App(
 # Add so we do not need to instantiate everywhere.
 $app->plates       = new Plates( './templates' );
 $app->form_helpers = new Form_Helpers( new FormBuilder() );
+$app->config = require 'config/config.php';
 
 require 'routes/home.php';
 require 'routes/whiskies.php';
