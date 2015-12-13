@@ -26,10 +26,7 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
         # Redirect to new ID page after successful POST ?
         #   May not need to pass in $whisky_data to render_manage_form() if we redirect.
 
-        /*$c['config'] = require dirname( dirname( __FILE__ ) ) . '/config/config.php';
-
-        $config = $c['config'];
-
+        /*
         $query_factory = new QueryFactory( 'sqlite' );
         $insert        = $query_factory->newInsert();*/
 
