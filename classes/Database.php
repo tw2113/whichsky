@@ -75,7 +75,7 @@ class Database
      */
     private function databaseExists()
     {
-        if ( ! file_exists( $this->dataPath . $this->databaseFileName . '.sqlite3' )) {
+        if ( ! file_exists( $this->dataPath . 'whichsky.sqlite3' )) {
             return false;
         }
 
