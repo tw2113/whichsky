@@ -86,12 +86,20 @@ class Database
      * Creates our database file if needed.
      * @since 1.0.0
      */
-    function createDatabaseFile()
+    private function createDatabaseFile()
     {
+        try {
+            $db = new \PDO( 'sqlite:' . $this->dataPath . 'whichsky.sqlite3' );
+        } catch( \PDOException $e ) {
+            $this->logger->pushHandler( new StreamHandler( 'logs/error.log', Logger::WARNING ) );
+
+            $this->logger->addError( "DB exception: {$e->getMessage()}" );
+        }
     }
 
     /**
      * Triggers the creation of our tables.
+     *
      * @since 1.0.0
      */
     private function createTables()
