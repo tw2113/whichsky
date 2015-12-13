@@ -3,7 +3,6 @@
 namespace tw2113\Whichsky;
 
 use \Slim as Slim;
-use Aura\SqlQuery\QueryFactory;
 use \League\Plates\Engine as Plates;
 use \AdamWathan\Form\FormBuilder as FormBuilder;
 
