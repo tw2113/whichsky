@@ -108,6 +108,10 @@ class Database
             $this->setTableNames();
         }
 
+        if (empty( $this->columns )) {
+            $this->setColumns();
+        }
+
         foreach ($this->tableNames as $table) {
             $this->createIndividualTable( $table );
         }
