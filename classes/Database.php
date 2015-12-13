@@ -167,32 +167,32 @@ class Database
     private function setColumns()
     {
         $this->columns['whiskies'] = [
-            'whisky_id',
-            'name',
-            'whisky_abv',
-            'distiller_name',
-            'distiller_id',
-            'packaging_description',
-            'years_matured',
-            'style',
-            'volume',
-            'price',
-            'aroma',
-            'palate',
-            'finish',
-            'date_purchased',
-            'date_opened',
-            'picture',
-            'on_wishlist'
+            'whisky_id INTEGER PRIMARY KEY AUTOINCREMENT',
+            'name TEXT',
+            'whisky_abv TEXT',
+            'distiller_name TEXT',
+            'distiller_id TEXT',
+            'packaging_description TEXT',
+            'years_matured TEXT',
+            'style TEXT',
+            'volume TEXT',
+            'price TEXT',
+            'aroma TEXT',
+            'palate TEXT',
+            'finish TEXT',
+            'date_purchased TEXT',
+            'date_opened TEXT',
+            'picture TEXT',
+            'on_wishlist TEXT'
         ];
 
         $this->columns['distilleries'] = [
-            'name',
-            'distiller ID',
-            'location',
-            'year established',
-            'website url',
-            'logo'
+            'distiller_id INTEGER PRIMARY KEY AUTOINCREMENT',
+            'name TEXT',
+            'location TEXT',
+            'year_established TEXT',
+            'website_url TEXT',
+            'logo TEXT'
         ];
     }
 
