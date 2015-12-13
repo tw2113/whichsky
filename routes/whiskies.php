@@ -39,6 +39,7 @@ $app->get( '/whiskies/', function () use ( $app ) {
     }
 
     $data['whiskies'] = [ ];
+    $data['th'] = [ ];
     if ( ! empty( $results )) {
         foreach ($results as $result) {
             foreach ($result as $key => $value) {
