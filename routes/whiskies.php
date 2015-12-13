@@ -10,10 +10,7 @@ use Monolog\Handler\StreamHandler;
 $app->get( '/whiskies/', function () use ( $app ) {
 
     $templates = $app->plates;
-
-    $c['config'] = require dirname( dirname( __FILE__ ) ) . '/config/config.php';
-
-    $config = $c['config'];
+    $config    = $app->config;
 
     $query_factory = new QueryFactory( 'sqlite' );
     $select        = $query_factory->newSelect();
