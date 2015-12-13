@@ -3,6 +3,7 @@
 <div class="pure-u-1-1">
     <h1>This page will list your taste/purchased/etc whiskies.</h1>
 
+    <?php if ( $th && $whiskies ) : ?>
     <table class="pure-table pure-table-horizontal pure-table-striped">
         <thead><tr>
         <?php foreach ($th as $head) : ?>
@@ -17,4 +18,7 @@
         </tr>
         <?php endforeach ?>
     </table>
+    <?php else : ?>
+        <p>No whiskies to display</p>
+    <?php endif; ?>
 </div>
