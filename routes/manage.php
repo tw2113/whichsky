@@ -15,6 +15,7 @@ use Monolog\Handler\StreamHandler;
 $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $args ) use ( $app ) {
     $helpers   = $app->form_helpers;
     $templates = $app->plates;
+    $config    = $app->config;
 
     $whisky_data = [ ]; # Populate with sanitized $form_data and after saving.
 
