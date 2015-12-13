@@ -11,13 +11,6 @@ class Database
 {
 
     /**
-     * Name to set our sqlite3 file to.
-     * @since 1.0.0
-     * @var string
-     */
-    public $databaseFileName = 'whichsky';
-
-    /**
      * Table names to create if necessary.
      * @since 1.0.0
      * @var array
