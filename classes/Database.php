@@ -138,32 +138,23 @@ class Database
      */
     private function createIndividualTable( $table = '' )
     {
-    }
+        $columns = $this->getSingleTableColumns( $table );
+        $table_create = "CREATE TABLE IF NOT EXISTS {$table} (";
+        $table_create .= implode( ',', $columns );
+        $table_create .= ")";
 
-    /**
-     * Fetches our database connection object.
-     * @since 1.0.0
-     */
-    public function getDatabaseObject()
-    {
-    }
+        $pdo = new ExtendedPdo(
+            $this->pdo_connection['db.pdo.connect']
+        );
 
-    /**
-     * Sets our database connection object.
-     * @since 1.0.0
-     */
-    function setDatabaseObject()
-    {
-    }
+        try {
+            $pdo->exec( $table_create );
+        } catch (\Exception $e) {
+            $this->logger->pushHandler( new StreamHandler( 'logs/error.log', Logger::WARNING ) );
 
-    /**
-     * Returns our intended table names.
-     * @since 1.0.0
-     * @return array Array of table names to create.
-     */
-    private function getTableNames()
-    {
-        return $this->tableNames;
+            $this->logger->addError( "{$table} table exception: {$e->getMessage()}" );
+        }
+
     }
 
     /**
