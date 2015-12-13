@@ -54,8 +54,10 @@ class Database
 
     public function __construct( $args = [ ], LoggerInterface $logger )
     {
-        $this->dataPath   = './data/';
-        $this->configPath = './config/config.php';
+        $this->dataPath       = './data/';
+        $this->configPath     = './config/config.php';
+        $this->pdo_connection = $args['pdo_connection'];
+        $this->logger         = $logger;
     }
 
     public function start()
