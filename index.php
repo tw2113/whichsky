@@ -20,6 +20,7 @@ $app->plates       = new Plates( './templates' );
 $app->form_helpers = new Form_Helpers( new FormBuilder() );
 $app->config = require 'config/config.php';
 
+require 'routes/install.php';
 require 'routes/home.php';
 require 'routes/whiskies.php';
 require 'routes/whisky.php';
