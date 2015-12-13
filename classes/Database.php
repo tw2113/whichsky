@@ -2,6 +2,11 @@
 
 namespace tw2113\Whichsky;
 
+use Aura\Sql\ExtendedPdo as ExtendedPdo;
+use Psr\Log\LoggerInterface;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
 class Database
 {
 
