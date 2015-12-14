@@ -88,6 +88,8 @@ class Database
      */
     public function start()
     {
+        $this->logger->pushHandler( $this->streamhandler );
+
         if ( ! $this->databaseExists()) {
             $this->createDatabaseFile();
             $this->createTables();
@@ -123,8 +125,6 @@ class Database
         try {
             $db = new \PDO( 'sqlite:' . $this->dataPath . 'whichsky.sqlite3' );
         } catch( \PDOException $e ) {
-            $this->logger->pushHandler( new StreamHandler( 'logs/error.log', Logger::WARNING ) );
-
             $this->logger->addError( "DB exception: {$e->getMessage()}" );
         }
 
@@ -184,8 +184,6 @@ class Database
         try {
             $pdo->exec( $table_create );
         } catch (\Exception $e) {
-            $this->logger->pushHandler( new StreamHandler( 'logs/error.log', Logger::WARNING ) );
-
             $this->logger->addError( "{$table} table exception: {$e->getMessage()}" );
         }
 
