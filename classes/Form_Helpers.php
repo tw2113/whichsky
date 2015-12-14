@@ -68,7 +68,7 @@ class Form_Helpers
                 'value' => $data['packaging_description']
             ],
             [ 'type' => 'textarea', 'label' => 'Aroma', 'id' => 'aroma', 'value' => $data['aroma'] ],
-            [ 'type' => 'textarea', 'label' => 'Palet', 'id' => 'palet', 'value' => $data['palet'] ],
+            [ 'type' => 'textarea', 'label' => 'Palate', 'id' => 'palate', 'value' => $data['palate'] ],
             [ 'type' => 'textarea', 'label' => 'Finish', 'id' => 'finish', 'value' => $data['finish'] ],
         ];
 
@@ -121,7 +121,7 @@ class Form_Helpers
             'abv'                   => '',
             'packaging_description' => '',
             'aroma'                 => '',
-            'palet'                 => '',
+            'palate'                => '',
             'finish'                => ''
         ];
     }
