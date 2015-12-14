@@ -67,7 +67,9 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
             );
 
         try {
-            $pdo = new \PDO( $config['db.pdo.connect'] );
+            $pdo = new ExtendedPdo(
+                $config['db.pdo.connect']
+            );
             $pdo->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
 
             $sth = $pdo->prepare( $insert->__toString() );
