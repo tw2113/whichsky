@@ -25,33 +25,46 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
         # Redirect to new ID page after successful POST ?
         #   May not need to pass in $whisky_data to render_manage_form() if we redirect.
 
-
         $query_factory = new QueryFactory( 'sqlite' );
         $insert        = $query_factory->newInsert();
 
         $insert
             ->into( 'whiskies' )
             ->cols(
-                array(
-                    'name'                => '',
-                    'whisky_abv'          => '',
-                    'distiller_name'      => '',
-                    'distiller_id'        => '',
-                    'package_description' => '',
-                    'years_matured'       => '',
-                    'style'               => '',
-                    'volume'              => '',
-                    'price'               => '',
-                    'aroma'               => '',
-                    'palate'              => '',
-                    'finish'              => '',
-                    'date_purchased'      => '',
-                    'date_opened'         => '',
-                    'picture'             => '',
-                    'on_wishlist'         => ''
-                )
+                [
+                    'name',
+                    'whisky_abv',
+                    'distiller_name',
+                    'distiller_id',
+                    'packaging_description',
+                    'years_matured',
+                    'style',
+                    'volume',
+                    'price',
+                    'aroma',
+                    'palate',
+                    'finish',
+                    'date_purchased',
+                    'date_opened'
+                ]
             )
-            ->bindValues( $form_data );
+            ->bindValues(
+                [
+                    'name'                  => $form_data['whisky_name'],
+                    'whisky_abv'            => $form_data['abv'],
+                    'distillery_name'       => $form_data['distillery_name'],
+                    'packaging_description' => $form_data['packaging_description'],
+                    'years_matured'         => $form_data['years_matured'],
+                    'style'                 => $form_data['style'],
+                    'volume'                => $form_data['volume'],
+                    'price'                 => $form_data['price'],
+                    'aroma'                 => $form_data['aroma'],
+                    'palate'                => $form_data['palate'],
+                    'finish'                => $form_data['finish'],
+                    'date_purchased'        => $form_data['date_purchased'],
+                    'date_opened'           => $form_data['date_opened']
+                ]
+            );
 
         try {
             $pdo = new \PDO( $config['db.pdo.connect'] );
