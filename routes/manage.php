@@ -35,8 +35,7 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
                 [
                     'name',
                     'whisky_abv',
-                    'distiller_name',
-                    'distiller_id',
+                    'distillery_name',
                     'packaging_description',
                     'years_matured',
                     'style',
