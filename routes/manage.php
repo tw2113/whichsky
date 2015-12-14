@@ -53,19 +53,21 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
             )
             ->bindValues( $form_data );
 
-        // a PDO connection
-        /*try {
+        try {
             $pdo = new \PDO( $config['db.pdo.connect'] );
             $pdo->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
-            #$pdo->exec( 'CREATE TABLE whiskies (name TEXT, distiller_name TEXT)');
+
             $sth = $pdo->prepare( $insert->__toString() );
             $sth->execute( $insert->getBindValues() );
 
             // get the results back as an associative array
             $result = $sth->fetch( \PDO::FETCH_ASSOC );
         } catch ( \Exception $e ) {
-            echo 'Caught exception: ', $e->getMessage(), "\n";
-        }*/
+            $logger = new Logger( 'install_errors' );
+            $logger->pushHandler( new StreamHandler( 'logs/error.log', Logger::WARNING ) );
+
+            $logger->addError( "Caught manage POST exception: {$e->getMessage()}" );
+        }
     }
 
     $data['form'] = $helpers->render_manage_form( $whisky_data );
