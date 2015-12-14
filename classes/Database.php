@@ -202,8 +202,7 @@ class Database
             'whisky_id INTEGER PRIMARY KEY AUTOINCREMENT',
             'name TEXT',
             'whisky_abv TEXT',
-            'distiller_name TEXT',
-            'distiller_id TEXT',
+            'distillery_name TEXT',
             'packaging_description TEXT',
             'years_matured TEXT',
             'style TEXT',
@@ -219,8 +218,8 @@ class Database
         ];
 
         $this->columns['distilleries'] = [
-            'distiller_id INTEGER PRIMARY KEY AUTOINCREMENT',
-            'name TEXT',
+            'distillery_id INTEGER PRIMARY KEY AUTOINCREMENT',
+            'distillery_name TEXT',
             'location TEXT',
             'year_established TEXT',
             'website_url TEXT',
