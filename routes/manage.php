@@ -4,6 +4,7 @@ namespace tw2113\Whichsky;
 
 use \Slim\Slim as Slim;
 use \Aura\SqlQuery\QueryFactory;
+use \Aura\Sql\ExtendedPdo as ExtendedPdo;
 use Respect\Validation\Validator as v;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
