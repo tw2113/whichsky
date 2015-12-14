@@ -76,10 +76,11 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
             // get the results back as an associative array
             $result = $sth->fetch( \PDO::FETCH_ASSOC );
         } catch ( \Exception $e ) {
-            $logger = new Logger( 'install_errors' );
+            $logger = new Logger( 'manage_errors' );
             $logger->pushHandler( new StreamHandler( 'logs/error.log', Logger::WARNING ) );
 
             $logger->addError( "Caught manage POST exception: {$e->getMessage()}" );
+            $data['error'] = true;
         }
     }
 
