@@ -25,23 +25,33 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
         # Redirect to new ID page after successful POST ?
         #   May not need to pass in $whisky_data to render_manage_form() if we redirect.
 
-        /*
-        $query_factory = new QueryFactory( 'sqlite' );
-        $insert        = $query_factory->newInsert();*/
 
-        /*
-         * $insert->into($table)->cols( array_keys( $form_data ) )->bindValues($form_data);
-         * $this->db->perform($insert->__toString(),$insert->getBindValues());
-         * $insert->getLastInsertIdName() //what does this one do?
-         */
-        /*$insert
+        $query_factory = new QueryFactory( 'sqlite' );
+        $insert        = $query_factory->newInsert();
+
+        $insert
             ->into( 'whiskies' )
             ->cols(
                 array(
-                    'name'           => 'Highland Single Malt',
-                    'distiller_name' => 'Tomatin'
+                    'name'                => '',
+                    'whisky_abv'          => '',
+                    'distiller_name'      => '',
+                    'distiller_id'        => '',
+                    'package_description' => '',
+                    'years_matured'       => '',
+                    'style'               => '',
+                    'volume'              => '',
+                    'price'               => '',
+                    'aroma'               => '',
+                    'palate'              => '',
+                    'finish'              => '',
+                    'date_purchased'      => '',
+                    'date_opened'         => '',
+                    'picture'             => '',
+                    'on_wishlist'         => ''
                 )
-            );*/
+            )
+            ->bindValues( $form_data );
 
         // a PDO connection
         /*try {
