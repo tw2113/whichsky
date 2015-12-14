@@ -72,12 +72,13 @@ class Database
      * @param LoggerInterface  $logger        Object for creating logs for debugging purposes.
      * @param HandlerInterface $streamhandler Object for handling streams and log files.
      */
-    public function __construct( $args = [ ], LoggerInterface $logger )
+    public function __construct( $args = [ ], LoggerInterface $logger, HandlerInterface $streamhandler )
     {
         $this->dataPath       = './data/';
         $this->configPath     = './config/config.php';
         $this->pdo_connection = $args['pdo_connection'];
         $this->logger         = $logger;
+        $this->streamhandler  = $streamhandler;
     }
 
     /**
