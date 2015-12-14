@@ -11,8 +11,7 @@ namespace tw2113\Whichsky;
 
 use Aura\Sql\ExtendedPdo as ExtendedPdo;
 use Psr\Log\LoggerInterface;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
+use Monolog\Handler\HandlerInterface;
 
 /**
  * Creates and sets up the SQLite database for a Whichsky app.
