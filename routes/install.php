@@ -15,7 +15,8 @@ $app->get( '/install', function ( $request, $response, $args ) use ( $app ) {
         [
             'pdo_connection' => $config,
         ],
-        new Logger( 'install_errors' )
+        new Logger( 'install_errors' ),
+        new StreamHandler( 'logs/error.log', Logger::WARNING )
     );
 
     $db->start();
