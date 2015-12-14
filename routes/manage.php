@@ -72,7 +72,7 @@ $app->map( [ 'GET', 'POST' ], '/manage/new/', function ( $request, $response, $a
             );
             $pdo->setAttribute( \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION );
 
-            $sth = $pdo->prepare( $insert->__toString() );
+            $sth = $pdo->prepare( $insert->getStatement() );
             $sth->execute( $insert->getBindValues() );
 
             // get the results back as an associative array
