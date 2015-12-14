@@ -118,6 +118,7 @@ class Database
      */
     private function createDatabaseFile()
     {
+        $db = (int) 0;
         try {
             $db = new \PDO( 'sqlite:' . $this->dataPath . 'whichsky.sqlite3' );
         } catch( \PDOException $e ) {
@@ -125,6 +126,8 @@ class Database
 
             $this->logger->addError( "DB exception: {$e->getMessage()}" );
         }
+
+        return $db;
     }
 
     /**
