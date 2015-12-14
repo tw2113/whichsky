@@ -68,8 +68,9 @@ class Database
      *
      * @since 1.0.0
      *
-     * @param array           $args   Array of arguments for connection.
-     * @param LoggerInterface $logger Object for creating logs for debugging purposes.
+     * @param array            $args          Array of arguments for connection.
+     * @param LoggerInterface  $logger        Object for creating logs for debugging purposes.
+     * @param HandlerInterface $streamhandler Object for handling streams and log files.
      */
     public function __construct( $args = [ ], LoggerInterface $logger )
     {
