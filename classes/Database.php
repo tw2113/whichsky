@@ -1,4 +1,11 @@
 <?php
+/**
+ * SQLite Database creation and setup for your app.
+ *
+ * @since 1.0.0
+ * @package tw2113\Whichsky
+ * @subpackage Database
+ */
 
 namespace tw2113\Whichsky;
 
@@ -7,6 +14,11 @@ use Psr\Log\LoggerInterface;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
+/**
+ * Creates and sets up the SQLite database for a Whichsky app.
+ *
+ * @since 1.0.0
+ */
 class Database
 {
 
@@ -39,9 +51,9 @@ class Database
     private $dataPath;
 
     /**
-     * PDO connection object
+     * PDO connection object.
      * @since 1.0.0
-     * @var PDO
+     * @var object PDO
      */
     private $pdo_connection;
 
@@ -52,6 +64,14 @@ class Database
      */
     private $logger;
 
+    /**
+     * Database constructor.
+     *
+     * @since 1.0.0
+     *
+     * @param array           $args   Array of arguments for connection.
+     * @param LoggerInterface $logger Object for creating logs for debugging purposes.
+     */
     public function __construct( $args = [ ], LoggerInterface $logger )
     {
         $this->dataPath       = './data/';
@@ -60,6 +80,11 @@ class Database
         $this->logger         = $logger;
     }
 
+    /**
+     * Process the initiation.
+     *
+     * @since 1.0.0
+     */
     public function start()
     {
         if ( ! $this->databaseExists()) {
@@ -70,7 +95,9 @@ class Database
 
     /**
      * Check if our database file exists.
+     *
      * @since 1.0.0
+     *
      * @return bool Whether or not the file exists.
      */
     private function databaseExists()
@@ -84,7 +111,10 @@ class Database
 
     /**
      * Creates our database file if needed.
+     *
      * @since 1.0.0
+     *
+     * @return int $db Amount of affected rows from query.
      */
     private function createDatabaseFile()
     {
@@ -201,7 +231,7 @@ class Database
      *
      * @since 1.0.0
      *
-     * @param $table Table name whose columns are requested
+     * @param string $table Table name whose columns are requested
      * @return array Array of columns for the table.
      */
     private function getSingleTableColumns( $table )
