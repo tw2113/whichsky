@@ -26,7 +26,7 @@ class Database
      * @since 1.0.0
      * @var array
      */
-    public $tableNames = [ ];
+    private $tableNames = [ ];
 
     /**
      * Columns to be added to database.
